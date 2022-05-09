@@ -10,5 +10,8 @@
         <module name="Ticket" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Ticket" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

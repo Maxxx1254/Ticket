@@ -1,16 +1,14 @@
 package ru.netology.repository;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.netology.domein.Ticket;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class TicketRepository extends Ticket {
 
-    TicketRepository repository = new TicketRepository();
+    Ticket[] tickets = new Ticket[0];
 
     public void addTicket(Ticket ticket) {
         int length = tickets.length + 1;
@@ -25,9 +23,9 @@ public class TicketRepository extends Ticket {
         int length = tickets.length - 1;
         Ticket[] tmp = new Ticket[length];
         int index = 0;
-        for (Ticket product : tickets) {
-            if (product.getId() != id) {
-                tmp[index] = product;
+        for (Ticket ticket : tickets) {
+            if (ticket.getId() != id) {
+                tmp[index] = ticket;
                 index++;
             }
             tickets = tmp;
