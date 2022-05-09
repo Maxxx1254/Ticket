@@ -1,8 +1,6 @@
 package ru.netology.manager;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
 import org.junit.jupiter.api.Test;
 import ru.netology.domein.Ticket;
 import ru.netology.repository.TicketRepository;
@@ -11,9 +9,7 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class TicketManagerTest {
     Ticket ticket1 = new Ticket(1, 20000, "DME", "LED", 90);
     Ticket ticket2 = new Ticket(2, 12000, "VKO", "FRU", 180);
@@ -62,6 +58,9 @@ public class TicketManagerTest {
 
     @Test
     public void sortByLowPrice() {
+        TicketManager manager = new TicketManager();
+        manager.getPrice();
+
         Ticket[] expected = {ticket2, ticket1, ticket3};
         Ticket[] actual = {ticket1, ticket2, ticket3};
 

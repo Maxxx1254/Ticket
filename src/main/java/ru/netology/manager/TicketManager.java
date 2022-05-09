@@ -2,27 +2,20 @@ package ru.netology.manager;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import ru.netology.domein.Ticket;
 import ru.netology.repository.TicketRepository;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 public class TicketManager extends Ticket {
-    TicketManager manager = new TicketManager();
+
     protected TicketRepository repository = new TicketRepository();
+
+    public TicketManager() {
+    }
 
     public void addTicket(Ticket ticket) {
         repository.addTicket(ticket);
-    }
-
-    public void findAllTo() {
-        repository.findAll();
-    }
-
-    public void findAllFrom() {
-        repository.findAll();
     }
 
     public Ticket[] searchBy(String departure, String arrival) {
@@ -48,4 +41,5 @@ public class TicketManager extends Ticket {
         }
         return true;
     }
+
 }
